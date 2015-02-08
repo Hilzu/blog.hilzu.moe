@@ -12,3 +12,6 @@ github_username:  hilzu
 markdown: kramdown
 
 exclude: [vendor]
+
+timezone: Europe/Helsinki
+encoding: utf-8
