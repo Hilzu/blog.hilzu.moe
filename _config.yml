@@ -4,7 +4,7 @@ email: hilzu@iki.fi
 description: >
   Random thoughts mostly about technology and especially about web stack.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://blog.hilzu.moe" # the base hostname & protocol for your site
+url: "https://blog.hilzu.moe" # the base hostname & protocol for your site
 twitter_username: ze_hilda
 github_username:  hilzu
 
