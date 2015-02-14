@@ -2,7 +2,7 @@
 layout: post
 title:  "jQuery AJAX please go away"
 date:   2015-02-10 20:40:00
-last_modified: 2015-02-13 15:00:00
+last_modified: 2015-02-14 11:20:00
 categories: web jquery ajax
 excerpt: jQuery AJAX API is crap. Luckily there are good alternatives.
 ---
@@ -77,6 +77,8 @@ jsonRequest('GET', 'http://example.com/posts')
 {% endhighlight %}
 
 With this making AJAX requests from the browser to a JSON API is enjoyable again.
+
+Edit 2015-02-14: The upcoming [Fetch Standard](https://fetch.spec.whatwg.org/) is also an interesting option in the future as the standard matures, polyfills appear and browers gain support for it. Chrome [already has](http://caniuse.com/#feat=fetch) initial support for the API.
 
 [1] <a name="1"></a>[Request] is probably nice on node but overkill for browser usage.
 
