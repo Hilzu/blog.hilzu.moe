@@ -2,6 +2,7 @@
 layout: post
 title:  "jQuery AJAX please go away"
 date:   2015-02-10 20:40:00
+last_modified: 2015-02-13 15:00:00
 categories: web jquery ajax
 excerpt: jQuery AJAX API is crap. Luckily there are good alternatives.
 ---
