@@ -78,9 +78,9 @@ jsonRequest('GET', 'http://example.com/posts')
 
 With this making AJAX requests from the browser to a JSON API is enjoyable again.
 
-Edit 2015-02-14: The upcoming [Fetch Standard](https://fetch.spec.whatwg.org/) is also an interesting option in the future as the standard matures, polyfills appear and browers gain support for it. Chrome [already has](http://caniuse.com/#feat=fetch) initial support for the API.
+<a name="edit-1" href="#edit-1">Edit 2015-02-14:</a> The upcoming [Fetch Standard](https://fetch.spec.whatwg.org/) is also an interesting option in the future as the standard matures, polyfills appear and browers gain support for it. Chrome [already has](http://caniuse.com/#feat=fetch) initial support for the API.
 
-[1] <a name="1"></a>[Request] is probably nice on node but overkill for browser usage.
+<a name="1" href="#1">[1]</a> [Request] is probably nice on node but overkill for browser usage.
 
 [http-spec-methods]: http://tools.ietf.org/html/rfc7231#section-4
 [jquery-deferred-problems]: http://stackoverflow.com/questions/23744612/problems-inherent-to-jquery-deferred/23744774#23744774
