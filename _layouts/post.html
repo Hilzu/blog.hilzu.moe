@@ -10,6 +10,8 @@ layout: default
   </header>
 
   <div style="display: none;" itemprop="description">{{ page.excerpt }}</div>
+  <div style="display: none;" itemprop="dateCreated datePublished">{{ page.date | date: "%FT%T+02" }}</div>
+  {% if page.last_modified %}<div style="display: none;" itemprop="dateModified">{{ page.last_modified | date: "%FT%T+02" }}</div>{% endif %}
 
   <article class="post-content" itemprop="articleBody">
     {{ content }}

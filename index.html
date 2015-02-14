@@ -8,13 +8,18 @@ layout: default
 
   <ul class="post-list">
     {% for post in site.posts %}
-      <li>
+      <li itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
         <span class="post-meta">Published: {{ post.date | date: "%b %-d, %Y" }}.{% if post.last_modified %} Last edited: {{ post.last_modified | date: "%b %-d, %Y" }}. {% endif %}</span>
 
+        <div style="display: none;" itemprop="dateCreated datePublished">{{ post.date | date: "%FT%T+02" }}</div>
+        {% if post.last_modified %}
+        <div style="display: none;" itemprop="dateModified">{{ post.last_modified | date: "%FT%T+02" }}</div>
+        {% endif %}
+
         <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}" itemprop="name">{{ post.title }}</a>
         </h2>
-        {{ post.excerpt }}
+        <p itemprop="description">{{ post.excerpt }}</p>
       </li>
     {% endfor %}
   </ul>
