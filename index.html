@@ -9,7 +9,12 @@ layout: default
   <ul class="post-list">
     {% for post in site.posts %}
       <li itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-        <span class="post-meta">Published: {{ post.date | date: "%b %-d, %Y" }}.{% if post.last_modified %} Last edited: {{ post.last_modified | date: "%b %-d, %Y" }}. {% endif %}</span>
+        <span class="post-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="dateCreated datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
+          {% if post.last_modified %}
+            • <time datetime="{{ post.last_modified | date_to_xmlschema }}" itemprop="dateModified">Edited {{ post.last_modified | date: "%b %-d, %Y" }}</time>
+          {% endif %}
+        </span>
 
         <div style="display: none;" itemprop="dateCreated datePublished">{{ post.date | date: "%FT%T+02" }}</div>
         {% if post.last_modified %}
