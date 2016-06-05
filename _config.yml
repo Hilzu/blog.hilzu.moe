@@ -8,8 +8,7 @@
 # Site settings
 title: Blog by Hilzu
 email: hilzu@iki.fi
-description: >
-  Random thoughts mostly about technology and especially about web stack.
+description: Random thoughts mostly about technology and especially about web stack.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://blog.hilzu.moe" # the base hostname & protocol for your site
 twitter_username: ze_hilda
