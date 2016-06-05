@@ -1,0 +1,42 @@
+---
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: Build site
+      shell: "bundle exec jekyll build"
+      environment:
+        JEKYLL_ENV: production
+- hosts: moe
+  become: yes
+  handlers:
+    - name: restart nginx
+      service: name=nginx state=restarted
+  tasks:
+    - name: Create deployment folder
+      file: path=/srv/www/moe_blog state=directory mode=0755
+    - name: Ensure rsync is installed
+      apt: name=rsync state=present
+    - name: Sync site to server
+      synchronize:
+        src: ../_site/
+        dest: /home/hilzu/moe_blog
+        owner: no
+        group: no
+        delete: yes
+      become: no
+    - name: Sync to correct folder
+      synchronize:
+        src: /home/hilzu/moe_blog/
+        dest: /srv/www/moe_blog
+        owner: no
+        group: no
+        delete: yes
+      delegate_to: "{{ inventory_hostname }}"
+    - name: Create nginx configuration
+      template:
+        src: templates/moe_blog.conf.j2
+        dest: /etc/nginx/conf.d/moe_blog.conf
+        owner: root
+        group: root
+        mode: 0644
+      notify: restart nginx

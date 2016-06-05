@@ -13,4 +13,7 @@ $ bundle update
 
 # Serve locally
 $ bundle exec jekyll serve
+
+# Deploy
+$ ansible-playbook -K ansible/deploy.yml
 ```
