@@ -1,21 +1,26 @@
 ---
 layout: default
 ---
-<div class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name">{{ page.title }}</h1>
-    <p class="post-meta">Published: {{ page.date | date: "%b %-d, %Y" }}.{% if page.last_modified %} Last edited: {{ page.last_modified | date: "%b %-d, %Y" }}. {% endif %}</p>
-    <p></p>
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="dateCreated datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+      {% if page.last_modified %}
+        • <time datetime="{{ page.last_modified | date_to_xmlschema }}" itemprop="dateModified">Edited {{ page.last_modified | date: "%b %-d, %Y" }}</time>
+      {% endif %}
+      {% if page.author %}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+      {% endif %}
+    </p>
   </header>
 
   <div style="display: none;" itemprop="description">{{ page.excerpt }}</div>
-  <div style="display: none;" itemprop="dateCreated datePublished">{{ page.date | date: "%FT%T+02" }}</div>
-  {% if page.last_modified %}<div style="display: none;" itemprop="dateModified">{{ page.last_modified | date: "%FT%T+02" }}</div>{% endif %}
 
-  <article class="post-content" itemprop="articleBody">
+  <div class="post-content" itemprop="articleBody">
     {{ content }}
-  </article>
+  </div>
 
   <div id="disqus_thread" itemprop="comment" itemscope itemtype="http://schema.org/UserComments"></div>
     <script type="text/javascript">
@@ -28,6 +33,5 @@ layout: default
         })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
 
-</div>
+</article>
