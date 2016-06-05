@@ -18,7 +18,7 @@ permalink: pretty
 # Build settings
 markdown: kramdown
 
-exclude: [vendor]
+exclude: [vendor, Gemfile, Gemfile.lock, README.md]
 
 timezone: Europe/Helsinki
 encoding: utf-8
