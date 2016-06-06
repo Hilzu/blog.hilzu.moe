@@ -2,6 +2,23 @@ server {
     listen 80;
     server_name blog.hilzu.moe;
 
+    location /.well-known/acme-challenge/ {
+        alias /srv/www/challenges/;
+        try_files $uri =404;
+    }
+
+    return 301 https://$server_name$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name blog.hilzu.moe;
+
+    ssl_certificate /etc/ssl/letsencrypt/blog_hilzu_moe_chain.pem;
+    ssl_certificate_key /etc/ssl/letsencrypt/keys/blog_hilzu_moe.key;
+
+    ssl_prefer_server_ciphers on;
+
     location / {
         root /srv/www/moe_blog/;
     }
