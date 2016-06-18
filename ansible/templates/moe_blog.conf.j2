@@ -18,6 +18,9 @@ server {
 
     server_name blog.hilzu.moe;
 
+    expires 24h;
+    add_header Cache-Control public;
+
     ssl_certificate /etc/ssl/letsencrypt/blog_hilzu_moe_chain.pem;
     ssl_certificate_key /etc/ssl/letsencrypt/keys/blog_hilzu_moe.key;
 
