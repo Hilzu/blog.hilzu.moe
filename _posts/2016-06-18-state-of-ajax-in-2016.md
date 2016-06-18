@@ -8,7 +8,7 @@ date: 2016-06-18 17:37:00 # UTC
 ---
 
 A bit more than a year ago I was so annoyed with jQuery AJAX API that I created
-this blog and [wrote about it][{% post_url 2015-02-10-jquery-ajax-go-away %}].
+this blog and [wrote about it]({% post_url 2015-02-10-jquery-ajax-go-away %}).
 In the end I mentioned the upcoming [fetch standard][fetch] and thought it's an
 interesting option in the future. Well the future is now and it's time to take
 another look at the state of AJAX APIs in the year 2016.
