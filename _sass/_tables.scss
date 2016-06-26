@@ -1,0 +1,14 @@
+table {
+  @extend %vertical-rhythm;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  border: 1px solid $grey-color-light;
+  padding: ($spacing-unit / 6) ($spacing-unit / 3);
+}
+
+tr:nth-child(even) {
+  background-color: $grey-color-lighter;
+}
