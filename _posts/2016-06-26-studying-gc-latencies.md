@@ -223,7 +223,7 @@ for (let i = 0; i < msgCount; i++) {
 
 Much better. Seems like objects as maps is a lot costlier than I thought and really should be avoided if possible.
 
-V8 GC pauses seem to be all over the place. The median pause was 64ms and the maximum a whopping 52 ms! The box plot
+V8 GC pauses seem to be all over the place. The median pause was 64ms and the maximum a whopping 529ms! The box plot
 really shows how uneven the times are.
 
 The same unfairness as with the Java benchmark exists here. Map is mutable. One of the most popular implementation
