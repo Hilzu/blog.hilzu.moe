@@ -1,0 +1,17 @@
+.gc-figures-container {
+  margin: 0 -140px;
+  text-align: center;
+
+  @media (max-width: 1000px) {
+    margin: 0 -40px;
+  }
+
+  figure {
+    display: inline-block;
+
+    img {
+      width: 500px;
+      max-width: 100%;
+    }
+  }
+}
